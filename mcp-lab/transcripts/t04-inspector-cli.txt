@@ -1,0 +1,69 @@
+{
+  "tools": [
+    {
+      "name": "log_watering",
+      "description": "Record that a plant was watered today.\n\n    Args:\n        plant: the plant's name, lower case\n        millilitres: how much water it got\n    ",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "plant": {
+            "title": "Plant",
+            "type": "string"
+          },
+          "millilitres": {
+            "title": "Millilitres",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "plant",
+          "millilitres"
+        ],
+        "title": "log_wateringArguments"
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "title": "Result",
+            "type": "string"
+          }
+        },
+        "required": [
+          "result"
+        ],
+        "title": "log_wateringOutput"
+      }
+    },
+    {
+      "name": "days_since_watering",
+      "description": "Say how many days since a plant was watered.\n\n    Args:\n        plant: the plant's name, lower case\n    ",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "plant": {
+            "title": "Plant",
+            "type": "string"
+          }
+        },
+        "required": [
+          "plant"
+        ],
+        "title": "days_since_wateringArguments"
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "title": "Result",
+            "type": "string"
+          }
+        },
+        "required": [
+          "result"
+        ],
+        "title": "days_since_wateringOutput"
+      }
+    }
+  ]
+}

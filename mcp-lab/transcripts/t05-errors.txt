@@ -1,0 +1,12 @@
+1. Wrong type for millilitres ->
+   is_error: True
+   text: Error executing tool log_watering: 1 validation error for log_wateringArguments
+millilitres
+  Input should be a valid integer, unable to parse string as an integer [type=int_parsing, input_value='a splash', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.14/v/int_parsing
+2. Unknown tool 'sing_to_plant' ->
+   is_error: True
+   text: Unknown tool: sing_to_plant
+3. Unknown plant 'orchid' ->
+   is_error: False
+   text: No plant called 'orchid' in the log.

@@ -1,0 +1,29 @@
+site_name: MCP for Mere Mortals
+site_description: A plain language guide to the Model Context Protocol. What hosts, clients and servers are, how tools, resources and prompts work, how to build a small server of your own, and why consent and least access are part of the design.
+site_url: https://paulsullivan33-dev.github.io/mcp-for-mere-mortals/
+copyright: 'Part of <a href="https://paulsullivan33-dev.github.io/mere-mortals/">For Mere Mortals</a> · Text <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>, code MIT'
+
+# Guides live at the repo root (nice for GitHub browsing).
+# The deploy workflow copies them into docs/ before building.
+theme:
+  name: material
+
+nav:
+  - Home: index.md
+  - What MCP Is: what-mcp-is.md
+  - Hosts, Clients and Servers: the-three-roles.md
+  - Transports: transports.md
+  - Tools: tools.md
+  - Resources: resources.md
+  - Prompts: prompts.md
+  - Sampling and Elicitation: sampling-and-elicitation.md
+  - Building a Small Server: building-a-server.md
+  - Connecting a Client: connecting-a-client.md
+  - The Inspector and Debugging: the-inspector.md
+  - Configuration Files: configuration-files.md
+  - Security and Consent: security-and-consent.md
+  - The Neighbours: the-neighbours.md
+  - Limits: limits.md
+  - Troubleshooting: troubleshooting.md
+  - Glossary: glossary.md
+  - Writing Criteria: criteria.md

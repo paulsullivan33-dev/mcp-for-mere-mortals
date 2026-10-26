@@ -1,0 +1,5 @@
+Plant Log lab - versions
+Python 3.12.3
+Name: mcp
+Version: 2.3.0
+ERROR: Pipe to stdout was broken

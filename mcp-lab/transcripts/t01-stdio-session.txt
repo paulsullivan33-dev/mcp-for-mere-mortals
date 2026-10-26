@@ -1,0 +1,39 @@
+
+== Server greeting ==
+Plant Log (protocol 2025-11-25)
+
+== Tools on offer ==
+- log_watering: Record that a plant was watered today.
+- days_since_watering: Say how many days since a plant was watered.
+
+== Resources on offer ==
+- plants://roster
+
+== Resource templates on offer ==
+- plants://{plant}/card
+
+== Prompts on offer ==
+- watering_reminder
+
+== Tool: days_since_watering(fern) ==
+fern was last watered 3 day(s) ago.
+
+== Tool: log_watering(fern, 300) ==
+Logged: fern watered with 300 ml on 2026-10-26.
+
+== Tool: days_since_watering(fern), again ==
+fern was last watered 0 day(s) ago.
+
+== Resource: plants://roster ==
+Plants in the log:
+- basil (Sweet basil)
+- cactus (Prickly pear cactus)
+- fern (Boston fern)
+
+== Resource: plants://cactus/card ==
+cactus - Prickly pear cactus
+Last watered: 2026-10-07 (19 day(s) ago, 60 ml)
+Note: Thrives on neglect.
+
+== Prompt: watering_reminder(basil) ==
+Please check the plant log for basil: read its card, say how long since it was watered, and tell me plainly whether it needs water today.

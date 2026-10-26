@@ -1,0 +1,13 @@
+{
+    "mcpServers": {
+        "plant-log": {
+            "args": [
+                "/home/you/mcp-lab/server/plant_log_server.py"
+            ],
+            "command": "/home/you/mcp-venv/bin/python"
+        },
+        "plant-log-http": {
+            "url": "http://127.0.0.1:8000/mcp"
+        }
+    }
+}

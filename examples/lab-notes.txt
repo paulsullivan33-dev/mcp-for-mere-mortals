@@ -1,0 +1,90 @@
+The lab — one real install, one machine, one invented log
+====================================================================
+
+The lab is the official Python SDK for
+MCP as pip ships it, installed into a
+fresh virtual environment on the build
+machine (an Ubuntu 24.04 sandbox,
+2 CPUs, 7.7 GB RAM):
+
+  * mcp 2.3.0 on Python 3.12.3 (pip,
+    into a venv).
+  * A throwaway server written for the
+    guide (mcp-lab/server/): the Plant
+    Log, a watering log for three
+    invented houseplants, state held in
+    memory. Two tools, one resource,
+    one resource template, one prompt.
+  * Two scripted clients and one
+    hand-written one (mcp-lab/client/),
+    talking to the server over stdio
+    and over streamable HTTP on
+    loopback. Nothing left the machine,
+    and the server could see nothing
+    beyond its own dictionary.
+
+What the lab ran, in
+mcp-lab/transcripts/:
+
+  * t00 versions: Python 3.12.3,
+    mcp 2.3.0.
+  * t01 a full stdio session: the
+    greeting (Plant Log, protocol
+    2025-11-25), discovery of all five
+    offerings, both tools called with
+    the log changing between calls
+    (fern: 3 days, logged 300 ml,
+    0 days), both resources read, the
+    prompt fetched.
+  * t02 the same server over
+    streamable HTTP: uvicorn on
+    127.0.0.1:8000, POSTs to /mcp in
+    the server's log, and the HTTP
+    client's session (cactus: 19 days,
+    roster read).
+  * t03 the opening exchange by hand
+    in raw JSON-RPC, no SDK: initialise,
+    the initialised notification,
+    tools/list, one tools/call, ids
+    matched 1-1, 2-2, 3-3.
+  * t04 the official Inspector in CLI
+    mode: tools/list answered with
+    both tools and their full schemas.
+  * t05 three broken calls: a
+    wrong-typed argument refused by
+    schema validation (isError true),
+    an unknown tool (isError true),
+    and a polite refusal from the tool
+    itself (isError false).
+
+The sandbox's lessons, discovered by
+running into them:
+
+  * SDK 2.x renames its own furniture.
+    FastMCP (the 1.x server class, and
+    the one in most tutorials) is gone:
+    the class is MCPServer, in
+    mcp.server.mcpserver. Client
+    results are snake_case: is_error,
+    not isError; server_info, not
+    serverInfo; resource_templates,
+    not resourceTemplates. The lab's
+    client failed on each old spelling
+    in turn before the fixes; the
+    guide teaches the current ones and
+    chapter 14 names the trap.
+  * A stdio server started alone in a
+    terminal sits silent, waiting for
+    JSON. That is health, not death.
+
+Documented only (the lab had no
+desktop host and no browser): real
+host configuration files (chapter 11
+teaches the documented common shape;
+examples/mcp-config.json is the same
+command the lab's client ran);
+sampling and elicitation; the
+Inspector's web interface (its CLI
+mode was run); OAuth for hosted
+servers; subscriptions and argument
+completion.

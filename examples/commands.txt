@@ -1,0 +1,51 @@
+MCP — the distilled commands
+====================================================================
+Placeholders: <venv> is the lab's virtual
+environment folder; <server.py> is the
+Plant Log server file.
+
+FIRST CONTACT (chapters 8-9)
+--------------------------------------------------------------------
+  python3 -m venv <venv>
+  <venv>/bin/pip install mcp
+  <venv>/bin/pip show mcp          # the lab ran 2.3.0
+
+  # the stdio client starts the server itself:
+  <venv>/bin/python mcp-lab/client/plant_log_client.py
+
+  # the server alone (waits silently for JSON):
+  <venv>/bin/python <server.py>
+  <venv>/bin/python <server.py> --http
+                                   # streamable HTTP on
+                                   # 127.0.0.1:8000, path /mcp
+
+THE SECOND TRANSPORT (chapters 3 and 9)
+--------------------------------------------------------------------
+  # terminal 1:
+  <venv>/bin/python <server.py> --http
+  # terminal 2:
+  <venv>/bin/python mcp-lab/client/plant_log_client_http.py
+
+LOOKING AT IT (chapter 10)
+--------------------------------------------------------------------
+  npx @modelcontextprotocol/inspector --cli \
+    <venv>/bin/python <server.py> --method tools/list
+  npx @modelcontextprotocol/inspector
+                                   # the web face (documented)
+  <venv>/bin/python mcp-lab/client/raw_conversation.py
+                                   # the handshake with no SDK
+
+WHEN IT BREAKS (chapter 14)
+--------------------------------------------------------------------
+  <venv>/bin/python mcp-lab/client/error_probe.py
+                                   # three failures, three shapes
+  python3 -m json.tool <config.json>
+                                   # validate a host config file
+
+THE OFFERINGS, FOR REFERENCE
+--------------------------------------------------------------------
+  tools        log_watering(plant, millilitres)
+               days_since_watering(plant)
+  resources    plants://roster
+               plants://{plant}/card   (a template)
+  prompts      watering_reminder(plant)

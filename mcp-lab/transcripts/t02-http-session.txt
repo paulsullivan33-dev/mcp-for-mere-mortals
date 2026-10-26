@@ -1,0 +1,8 @@
+Server greeting: Plant Log (protocol 2025-11-25)
+Tools on offer: log_watering, days_since_watering
+days_since_watering(cactus): cactus was last watered 19 day(s) ago.
+plants://roster:
+Plants in the log:
+- basil (Sweet basil)
+- cactus (Prickly pear cactus)
+- fern (Boston fern)
